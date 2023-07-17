@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Nhom link bai viet:
+
+RewriteRule ^([A-Za-z0-9_-]+)-([0-9]+).html$ index.php?mod=page&controller=index&action=detail&id=$2&slug=$1
+
+# Nhom link san pham:
+
+RewriteRule ^([A-Za-z0-9_-]+)-([0-9]+)/$ index.php?mod=product&controller=index&action=index&cat_id=$2&slug=$1
+RewriteRule ^([A-Za-z0-9_-]+)-([0-9]+)/([A-Za-z0-9_-]+)-([0-9]+)$ index.php?mod=product&controller=index&action=detail&id=$4&slug=$3
+
+# Nhom link gio hang
+
+RewriteRule ^([A-Za-z0-9_-]+)$ index.php?mod=cart&controller=index&action=index
+RewriteRule ^([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+)$ index.php?mod=cart&controller=index&action=checkout
+

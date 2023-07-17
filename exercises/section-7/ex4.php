@@ -1,0 +1,194 @@
+<?php
+//4. Hiển thị danh sách bài viết lên giao diện
+/*
+B1: Chuẩn bị dữ liệu
+B2: Cắt giao diện HTML
+B3: Kiểm tra dữ liệu
+B4: Đổ dữ liệu
+*/
+
+function show_array($data){
+    if(is_array($data)){
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+    }
+}
+
+$list_post_cat = array(
+    1 => array(
+        'id_cat' => 1,
+        'cat_title' => 'Xã hội'
+    ),
+    2 => array(
+        'id_cat' => 2,
+        'cat_title' => 'Thể thao'
+    ),
+);
+
+$list_post = array(
+    1 => array(
+        'post_id' => 1,
+        'post_thumb' => 'https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2023/5/26/220526-gadgetmatch-rog-flow-z13-1685068780545176482658-0-72-720-1224-crop-16850688405192055035245.jpg',
+        'post_title' => 'Nhiều trò chơi độc quyền của PlayStation 5 cũng sẽ đến với Xbox',
+        'post_desc' => 'Sony sắp tổ chức sự kiện giới thiệu hàng loạt trò chơi PlayStation',
+        'post_day' => '27/05/2023',
+        'post_time' => '09:09 GMT+7',
+        'post_detail' => 'content detail',
+        'post_author' => 'Phong Đỗ',
+        'post_rank' => '3 sao',
+        'cat_id' => 1
+    ),
+    2 => array(
+        'post_id' => 2,
+        'post_thumb' => 'https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2023/5/26/3472377266289682159373737093899551639932575n-16851072682582065036898-74-0-1324-2000-crop-16851075803902056224136.jpg',
+        'post_title' => 'SofM trở thành HLV trưởng ĐTQG Liên Minh Huyền Thoại Việt Nam',
+        'post_desc' => 'Trở về từ LPL, Lê "SofM" Quang Duy được chọn làm HLV trưởng của đội tuyển quốc gia Liên Minh Huyền Thoại Việt nam tại Road to Asian Games 2022',
+        'post_day' => '27/05/2023',
+        'post_time' => '08:28 GMT+7',
+        'post_detail' => 'content detail',
+        'post_author' => 'Hạo Thiên',
+        'post_rank' => '5 sao',
+        'cat_id' => 2
+    ),
+    3 => array(
+        'post_id' => 3,
+        'post_thumb' => 'https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2023/5/25/20230516-investo-fool-vananh-daily-21866-image-1-16850584088181459107290-0-0-1200-1920-crop-16850584123201975543194.jpg',
+        'post_title' => 'Nvidia sắp trở thành công ty nghìn tỉ USD nhờ chip AI',
+        'post_desc' => 'Trung Quốc đưa ra lời cảnh báo về AI',
+        'post_day' => '27/05/2023',
+        'post_time' => '08:04 GMT+7',
+        'post_detail' => 'content detail',
+        'post_author' => 'Mai Anh',
+        'post_rank' => '3 sao',
+        'cat_id' => 1
+    ),
+    4 => array(
+        'post_id' => 4,
+        'post_thumb' => 'https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2023/5/26/dragon-dogma-1685070719985916570398-0-48-576-970-crop-1685070765862279847176.jpg',
+        'post_title' => 'Capcom tung trailer hoành tràng của Dragon’s Dogma 2',
+        'post_desc' => 'Capcom đang phát triển phần tiếp theo của Dragon’s Dogma',
+        'post_day' => '26/05/2023',
+        'post_time' => '16:17 GMT+7',
+        'post_detail' => 'content detail',
+        'post_author' => 'Phong Đỗ',
+        'post_rank' => '3 sao',
+        'cat_id' => 1
+    ),
+    5 => array(
+        'post_id' => 5,
+        'post_thumb' => 'https://images2.thanhnien.vn/zoom/328_205/528068263637045248/2023/5/25/cmc-16850322685111935554624-0-45-1147-1880-crop-16850323179122105334600.png',
+        'post_title' => 'CMC Telecom đặt mục tiêu thành nhà cung cấp dịch vụ hội tụ công nghệ',
+        'post_desc' => 'Tập đoàn công nghệ CMC tròn 30 năm tuổi',
+        'post_day' => '26/05/2023',
+        'post_time' => '07:46 GMT+7',
+        'post_detail' => 'content detail',
+        'post_author' => 'Thành Luân',
+        'post_rank' => '4 sao',
+        'cat_id' => 2
+    ),
+);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị danh sách bài viết</title>
+</head>
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrapper{
+            width: 960px;
+            margin: 0px auto;
+        }
+        #header, #footer{
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0px;
+        }
+        #wp-content{
+            padding: 30px 20px;
+            min-height: 500px;
+        }
+        ul#list-post{
+            padding: 0;
+            list-style: none;
+        }
+        ul#list-post li.post-item{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        ul#list-post li.post-item a.post-thumb{
+            display: block;
+            flex-basis: 40%;
+        }
+        ul#list-post li.post-item .post-info{
+            flex-basis: 60%;
+        }
+        ul#list-post li.post-item .post-info a.post-title{
+            text-decoration: none;
+            padding: 20px 0px;
+            display: block;
+            font-size: 20px;
+            color: black;
+        }
+        ul#list-post li.post-item .post-info a.post-title:hover{
+            color: blue;
+        }
+
+        ul#list-post li.post-item .post-info p{
+            padding: 10px 0px;
+            font-size: 13px;
+        }
+        ul#list-post li.post-item .post-info .post-desc{
+            font-size: 18px;
+        }
+
+
+    </style>
+    <div id="wrapper">
+        <div id="header">
+            Hiển thị danh sách bài viết
+        </div>
+        <!-- End header -->
+        <div id="wp-content">
+            <?php
+                if(!empty($list_post)){
+                    ?>
+                        <ul id="list-post">
+                            <?php
+                            foreach($list_post as $item){
+                                ?>
+                                    <li class="post-item">
+                                        <a href="#" class="post-thumb"><img src="<?php echo $item['post_thumb'] ?>" alt=""></a>
+                                        <div class="post-info">
+                                            <a href="#" class="post-title"><?php echo $item['post_title'] ?></a>
+                                            <p><span class="post-day"><?php echo $item['post_day'] ?></span> <span class="post-time"><?php echo $item['post_time'] ?></span></p>
+                                            <div class="post-desc"><?php echo $item['post_desc'] ?></div>
+                                        </div>
+                                    </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    <?php
+                }else echo "Dữ liệu bài viết không tồn tại!!!";
+            ?>
+        </div>
+        <!-- End Wp - content -->
+        <div id="footer">
+            Dungdev.com
+        </div>
+        <!-- End footer -->
+    </div>
+</body>
+</html>

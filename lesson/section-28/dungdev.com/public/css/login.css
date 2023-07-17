@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #2980b9;
+    font-size: 20px;
+    font-family: roboto;
+}
+
+#wp-page-login{
+    width: 960px;
+    justify-content: center;
+    display: flex;
+    margin: 0px auto;
+}
+form{
+    background: #ece7e7;
+    margin-top: 120px;
+    width: 290px;
+    border-radius: 4px;
+    text-align: center;
+}
+form h2{
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 20px;
+    color: #2980b9;
+}
+form input{
+    display: block;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 10px 0px;
+    margin: 0px auto;
+    text-align: center;
+    width: 90%;
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+#btn-login{
+    background-color: #2980b9;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#btn-login:hover{
+    background-color: #0097e6;
+}
+
+.remember-me{
+    display: flex;
+}
+
+.remember-me>input{
+    flex-basis: 20%;
+}
+
+.remember-me label{
+    flex-basis: 80%;
+    text-align: left;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 13px;
+}
+
+form>a{
+    color: #0097e6;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0px 0px 20px 0px;
+    display: inline-block;
+}
+
+form>a:hover{
+    text-decoration: underline;
+}
+
+p.error{
+    color: red !important;
+    font-size: 16px !important;
+    padding: 0px 0px 10px 0px;
+}
+
+form>p:first-of-type{
+    color: #2ecc71;
+    font-size: 18px;
+    padding: 10px;
+    font-style: italic;
+}
+
+form p:last-child>a{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    border-radius: 2px;
+    background: #0097e6;
+}
+
+#link-reg{
+
+}

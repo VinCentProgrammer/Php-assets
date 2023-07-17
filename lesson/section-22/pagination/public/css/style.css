@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#wrapper{
+    width: 1200px;
+    margin: 0 auto;
+    font-family: roboto;
+}
+
+#wrapper #wp-logo>h2{
+    text-align: center;
+    letter-spacing: 5px;
+    padding: 10px;
+}
+
+#wrapper #wp-logo>p{
+    text-align: right;
+    padding: 0px 10px 5px 0px;
+}
+#header, #footer{
+    background-color: #4043f0;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Template header  */
+#header.mod-home{
+    background-color: #4043f0;
+}
+#header.mod-page{
+    background-color: #d1a41f;
+}
+#header.mod-product{
+    background-color: #12c158;
+}
+
+
+#header a{
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+}
+#content{
+    padding: 20px 10px;
+    background: #ffffff;
+    min-height: 600px;
+    font-size: 20px;
+}
+
+p.error{
+    font-size: 16px;
+    color: red;
+    display: block;
+    padding: 10px 0px;
+}
+
+#btn-add-new{
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #12c158;
+    color: #fff;
+    border: none;
+    width: 241px;
+}
+
+
+#gender, input{
+    padding: 8px 20px;
+    width: 200px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: #eee;
+    border-radius: 5px;
+}
+
+p.success{
+    color: rgb(8, 178, 70);
+}

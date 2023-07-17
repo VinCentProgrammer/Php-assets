@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(47, 47, 247);
+    font-size: 20px;
+    font-family: roboto;
+}
+#wp-page-login{
+    width: 250px;
+    background: #f6f5f5;
+    margin: 150px auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#wp-page-login h2{
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    padding: 10px;
+    
+    color: #090d50;
+}
+
+#wp-page-login #username, #wp-page-login #password{
+    padding: 10px 0px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: rgb(233 229 224);
+    text-align: center;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+#wp-page-login #btn-login{
+    padding: 9px;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    background: rgb(35 35 236);
+    margin: 15px 0px 20px 0px;
+}
+.remember-me{
+    text-align: left;
+    font-size: 16px;
+    padding: 2px 0px 0px 10px;
+}
+
+.remember-me>label{
+    padding: 0px 10px;
+    color: #333;
+}
+#lost-pass{
+    text-decoration: none;
+    color: #3a55d8;
+}
+
+#lost-pass:hover{
+    color: #193cec;
+}
+
+p.error{
+    font-size: 13px;
+    padding: 10px 0px;
+    color: red;
+}

@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+#wp-page-login{
+    font-family: 'Poppins', sans-serif;
+    background: #27ae60;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 180px;
+    background: #2ecc71;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+/* #wp-page-reset-pass{
+    font-family: 'Poppins', sans-serif;
+    background: #27ae60;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 180px;
+    background: #2ecc71;
+    border-radius: 5px;
+} */
+
+form{
+    padding: 0px 20px;
+}
+
+form#wp-page-login h2{
+    font-size: 30px;
+    text-align: center;
+    padding: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* form#wp-page-reset-pass h2{
+    font-size: 30px;
+    text-align: center;
+    padding: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+} */
+
+form#wp-page-login input{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    margin: 10px 0px;
+    font-size: 15px;
+}
+
+form#wp-page-login input[type='submit']{
+    background: #27ae60;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+/* form#wp-page-reset-pass input[type='submit']{
+    background: #27ae60;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.25s;
+} */
+
+
+form#wp-page-login input[type='submit']:hover{
+    background-color: #2aba66;
+}
+/* form#wp-page-reset-pass input[type='submit']:hover{
+    background-color: #2aba66;
+} */
+
+#wp-page-login a{
+    text-align: center;
+    display: block;
+    padding: 5px 0px 10px 0px;
+    color: #333;
+}
+
+#wp-page-login a:hover{
+    text-decoration: underline !important;
+}
+
+p.error{
+    font-size: 12px;
+    color: #2c3e50;
+    text-align: center;
+}
+#add-user.error{
+    font-size: 15px;
+    color: #f00;
+    text-align: left;
+}
+
+#add-user.alert{
+    font-size: 20px;
+    color: #f00;
+    text-align: left;
+    padding: 0px 0px 20px 0px;
+    font-style: italic;
+}
+#update-info.alert{
+    font-size: 20px;
+    color: green;
+    text-align: left;
+    padding: 0px 0px 20px 0px;
+    font-style: italic;
+}
+
+p.alert{
+    font-size: 13px;
+    color: #2c3e50;
+    text-align: center;
+}
